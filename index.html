@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reports from our software-defined radio lab.">
+  <title>SDR Lab — Experiment Reports</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxNDJjMzQiLz48cGF0aCBkPSJNMTAgMzZjOC0zMiAxNCAzMiAyMiAwUzQ2IDQgNTQgMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1YTg3MiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4K" type="image/svg+xml">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
+:root{--paper:#f8f9f5;--ink:#18343c;--muted:#627279;--line:#dae1dc;--orange:#f0a374;--green:#21675e;--white:#fff;--serif:Georgia,'Times New Roman',serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.7}a{color:inherit;text-decoration:none}button,input{font:inherit}button,a,input,summary{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #c46932;outline-offset:5px}.container{width:min(1180px,calc(100% - 80px));margin-inline:auto}.site-header{height:90px;background:var(--paper);border-bottom:1px solid var(--line)}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:8px;font-family:Manrope,system-ui,sans-serif;letter-spacing:1px;font-size:19px;font-weight:800;white-space:nowrap}.brand-icon{width:32px;height:32px;display:grid;place-items:center;color:var(--paper);background:var(--ink);border-radius:8px;font-size:29px;line-height:1}.brand-light{color:#8a9b9b;font-weight:400}nav{display:flex;gap:35px;align-items:center}nav a{font-size:14px;font-weight:500;color:var(--muted)}nav a:hover,nav .active{color:var(--ink)}.skip{position:absolute;top:-100px;z-index:100;background:white;padding:10px}.skip:focus{top:10px}.hero{background:var(--ink);color:var(--paper);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.06fr 1fr;align-items:center;gap:56px;padding-block:75px 64px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;display:flex;align-items:center;gap:10px;margin:0 0 25px;color:#bad0d0}.tiny-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex:none}.eyebrow.dark{color:var(--green);margin-bottom:12px}.hero h1{font-family:Manrope,system-ui,sans-serif;font-weight:650;line-height:1.13;letter-spacing:-3px;font-size:clamp(42px,5.3vw,70px);margin:0 0 24px}.hero h1 em{font-family:var(--serif);font-weight:400;color:var(--orange)}.hero-description{color:#c3d1d3;max-width:450px;font-size:16px;line-height:1.9}.actions{display:flex;align-items:center;gap:25px;margin-top:30px;flex-wrap:wrap}.button{display:inline-flex;justify-content:center;align-items:center;gap:24px;font-weight:700;font-size:13px;padding:13px 20px;border:1px solid transparent;border-radius:5px;cursor:pointer;min-height:48px;transition:background .15s,transform .15s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--orange);color:#1e3035}.button.outline{background:transparent;border-color:#a9b9b7;color:var(--ink)}.button.outline:hover{background:#eaf0eb}.text-link{font-size:12px;color:#d3dfdf}.hero-meta{display:flex;gap:21px;font-size:9px;letter-spacing:2px;color:#91aaaf;margin-top:55px}.instrument{border:1px solid #3c555e;border-radius:10px;background:#132b33;box-shadow:0 24px 80px #081e2440;transform:rotate(-2deg)}.instrument-top,.instrument-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:monospace;font-size:9px;color:#a8bfc4;letter-spacing:.6px;padding:17px 20px}.instrument-top{border-bottom:1px solid #2a444d}.instrument-top i{display:inline-block;width:6px;height:6px;background:#8cbdad;border-radius:50%;margin-right:6px}.instrument-top>span:last-child{color:#708e96;font-size:8px}.instrument svg{display:block;width:100%}.instrument-bottom{padding:17px 20px;border-top:1px solid #2a444d;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0}.instrument-bottom b{color:var(--orange);font-family:monospace;margin-right:6px}.principles{border-bottom:1px solid var(--line);background:#eff2ec}.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);padding-block:35px;gap:36px}.principle-grid>div+div{border-left:1px solid #d2dcd5;padding-left:35px}.mono{font-family:monospace;font-size:10px;letter-spacing:1.5px;color:var(--green)}h2,h3,h4{font-family:Manrope,system-ui,sans-serif;line-height:1.35}h2{font-size:30px;letter-spacing:-1px;margin:0 0 16px}h3{font-size:22px;letter-spacing:-.5px;margin:0 0 10px}.principle-grid h2{font-size:19px;letter-spacing:-.4px;margin:10px 0}.principle-grid p{font-size:13px;color:var(--muted);line-height:1.8;margin:0}.notebook{padding-block:55px 64px}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:25px}.section-heading h2{margin-bottom:0}.section-note{font-size:12px;color:var(--muted);padding-bottom:4px}.lab-card{display:flex;align-items:center;gap:34px;padding:33px;background:#fff;border:1px solid var(--line);border-radius:9px}.lab-number{font-size:65px;font-weight:500;line-height:1;font-family:Manrope,sans-serif;letter-spacing:-4px;width:110px;flex:none;border-right:1px solid var(--line);padding-right:32px}.lab-number span{display:block;font-family:monospace;font-size:8px;letter-spacing:1.4px;color:var(--muted);margin-top:15px}.lab-card-copy{flex:1}.badge{display:inline-flex;font-size:9px;letter-spacing:1.3px;padding:4px 8px;line-height:1.5;border:1px solid #d5dfd6;border-radius:4px;background:#eef3ed;color:#4c6655;font-weight:700}.lab-card h3{margin:12px 0 8px;font-size:25px}.lab-card p{font-size:13px;color:var(--muted);margin:0}.tags{display:flex;gap:15px;flex-wrap:wrap;margin-top:16px;font-size:10px;color:#627a78}.tags span:before{content:'·';margin-right:7px}.team-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding-block:65px}.muted{color:var(--muted);font-size:14px}.team-roles{display:grid;gap:25px}.team-roles>div{display:flex;align-items:center;gap:18px}.team-roles h3{font-size:14px;letter-spacing:0;margin-bottom:5px}.team-roles p{font-size:12px;margin:0;color:var(--muted)}.role-icon{width:44px;height:44px;background:#e9eee7;border-radius:50%;display:grid;place-items:center;font-size:24px;flex:none;color:var(--green)}.site-footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-block:24px;font-size:11px;color:var(--muted)}.footer-divider{margin-inline:9px}.site-footer a:hover{text-decoration:underline}
+
+.report-download{width:205px;flex:none;text-align:center}.report-download .button{width:100%;gap:12px}.unavailable{opacity:.55;cursor:default!important}.unavailable:hover{transform:none!important;background:transparent!important}.pdf-status{font-size:10px!important;line-height:1.65!important;color:var(--muted);margin:10px 0 0!important}.download-link{display:block;font-size:11px;color:var(--green);margin-top:8px}.download-link:hover{text-decoration:underline}[hidden]{display:none!important}
+@media(max-width:1000px){.container{width:calc(100% - 48px)}.hero-grid{gap:30px}.hero h1{font-size:52px}.hero-description{font-size:14px}.actions{gap:17px}.hero-meta{gap:13px;font-size:8px}.instrument-bottom{font-size:8px;padding:14px}.lab-card{gap:23px;padding:26px}.lab-number{width:90px;padding-right:20px}.lab-card h3{font-size:21px}.section-note{display:none}}
+@media(max-width:720px){.container{width:calc(100% - 36px)}.site-header{height:74px}.brand{font-size:15px;gap:5px}.brand-icon{width:26px;height:26px;font-size:24px}nav{gap:18px}nav a{font-size:11px}.hero-grid{grid-template-columns:1fr;padding-block:45px 40px;gap:40px}.eyebrow{font-size:8px;letter-spacing:1.5px}.hero h1{font-size:51px;letter-spacing:-2px}.hero-description{max-width:440px;font-size:15px}.hero-meta{margin-top:30px;gap:20px}.instrument{max-width:520px;transform:rotate(0)}.instrument-bottom{font-size:10px}.principle-grid{grid-template-columns:1fr;gap:22px;padding-block:28px}.principle-grid>div+div{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:22px}.principle-grid h2{font-size:20px}.notebook{padding-top:40px}h2{font-size:25px}.lab-card{flex-wrap:wrap;padding:23px;gap:20px}.lab-number{font-size:50px;width:75px}.lab-card-copy{min-width:150px}.lab-card h3{font-size:20px}.report-download{width:100%}.team-section{grid-template-columns:1fr;gap:25px;padding-block:40px}.team-section h2{font-size:25px}.site-footer{font-size:10px;flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="SDR Lab home"><span class="brand-icon" aria-hidden="true">∿</span> SDR<span class="brand-light">/</span>LAB</a>
+    <nav aria-label="Main navigation"><a class="active" href="index.html" aria-current="page">Home</a><a href="#notebook">Reports</a><a href="https://github.com/hodast79/sdr-lab-reports" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero"><div class="container hero-grid">
+      <div class="hero-copy"><p class="eyebrow"><span class="tiny-dot"></span> SOFTWARE-DEFINED RADIO LABORATORY</p>
+        <h1>SDR lab<br><em>reports.</em></h1>
+        <p class="hero-description">Reports and results from our radio experiments.</p>
+        <div class="actions"><a class="button primary" href="#notebook">View reports <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="instrument" role="img" aria-label="Illustrative two-tone spectrum, showing fundamental tones, third-order products and a noise floor. Not measured data.">
+        <div class="instrument-top"><span><i></i> TWO-TONE SPECTRUM</span><span>ILLUSTRATION</span></div>
+        <svg viewBox="0 0 560 330" aria-hidden="true">
+          <defs><pattern id="grid" width="50" height="45" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 45" fill="none" stroke="#ffffff" stroke-opacity=".09"/></pattern><linearGradient id="signal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5a872" stop-opacity=".32"/><stop offset="1" stop-color="#f5a872" stop-opacity="0"/></linearGradient></defs>
+          <rect x="38" y="20" width="495" height="260" fill="url(#grid)"/>
+          <path d="M40 256 L55 251 68 258 79 249 91 255 107 252 117 257 130 250 142 255 154 250 165 254 175 247 183 254 192 177 201 253 211 250 224 255 235 248 246 253 256 67 267 252 280 249 292 254 306 250 319 67 330 254 342 250 353 255 366 248 377 253 386 177 395 252 408 248 419 255 430 250 443 255 457 250 471 256 485 249 500 253 530 252 L530 280 L40 280Z" fill="url(#signal)"/>
+          <path d="M40 256 L55 251 68 258 79 249 91 255 107 252 117 257 130 250 142 255 154 250 165 254 175 247 183 254 192 177 201 253 211 250 224 255 235 248 246 253 256 67 267 252 280 249 292 254 306 250 319 67 330 254 342 250 353 255 366 248 377 253 386 177 395 252 408 248 419 255 430 250 443 255 457 250 471 256 485 249 500 253 530 252" fill="none" stroke="#f5a872" stroke-width="2.2" stroke-linejoin="round"/>
+          <g fill="#b7c9cd" font-size="11" font-family="monospace"><text x="244" y="48">f₁</text><text x="309" y="48">f₂</text><text x="162" y="159">2f₁−f₂</text><text x="365" y="159">2f₂−f₁</text><text x="40" y="307">FREQUENCY →</text><text x="40" y="237" fill="#719da7">NOISE FLOOR</text></g>
+        </svg>
+      </div>
+    </div></section>
+    <section class="container notebook" id="notebook"><div class="section-heading"><h2>Lab reports</h2></div>
+      <article class="lab-card"><div class="lab-number">02<span>EXPERIMENT</span></div><div class="lab-card-copy"><span class="badge" id="report-badge">PRE-LAB</span><h3>Noise Figure &amp; RF Parameters</h3><p>Noise, distortion, and receiver performance.</p></div><div class="report-download"><a class="button outline unavailable" id="pdf-view" role="link" aria-disabled="true" aria-describedby="pdf-status" target="_blank" rel="noopener noreferrer">View report <span aria-hidden="true">↗</span></a><a class="download-link" id="pdf-download" download="lab02-prelab.pdf" hidden>Download PDF ↓</a><p class="pdf-status" id="pdf-status" role="status">Coming soon.</p></div></article><noscript><p class="muted"><a href="prelab.pdf">Open PDF report</a></p></noscript>
+    </section>
+
+  </main>
+  <footer class="container site-footer"><span>SDR / LAB <span class="footer-divider">—</span> Experiment reports</span><a href="https://github.com/hodast79/sdr-lab-reports">GitHub ↗</a></footer>
+<script>
+'use strict';
+
+// The report stays in a PDF. Enable its links only when a real PDF is present.
+async function discoverReport() {
+  const view = document.getElementById('pdf-view');
+  const download = document.getElementById('pdf-download');
+  const status = document.getElementById('pdf-status');
+  const badge = document.getElementById('report-badge');
+  const url = new URL('prelab.pdf', document.baseURI);
+  if (window.location.protocol === 'file:') {
+    status.textContent = 'Coming soon.';
+    return;
+  }
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+  try {
+    const response = await fetch(url, { method: 'HEAD', cache: 'no-store', signal: controller.signal });
+    if (response.status === 404) return;
+    if (!response.ok || !response.headers.get('content-type')?.toLowerCase().includes('application/pdf')) {
+      status.textContent = 'Report unavailable.';
+      return;
+    }
+    view.href = url.href;
+    view.removeAttribute('aria-disabled');
+    view.classList.remove('unavailable');
+    download.href = url.href;
+    download.hidden = false;
+    badge.textContent = 'PRE-LAB';
+    const bytes = Number(response.headers.get('content-length'));
+    status.textContent = bytes > 0 ? `PDF · ${bytes >= 1048576 ? (bytes / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(bytes / 1024)) + ' KB'}` : 'PDF report';
+  } catch {
+    status.textContent = 'Could not load the report. Please refresh.';
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+discoverReport();
+
+</script>
+</body></html>
