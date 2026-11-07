@@ -41,7 +41,7 @@
       </div>
     </div></section>
     <section class="container notebook" id="notebook"><div class="section-heading"><h2>Lab reports</h2></div>
-      <article class="lab-card"><div class="lab-number">02<span>EXPERIMENT</span></div><div class="lab-card-copy"><span class="badge" id="report-badge">PRE-LAB</span><h3>Noise Figure &amp; RF Parameters</h3><p>Noise, distortion, and receiver performance.</p></div><div class="report-download"><a class="button outline unavailable" id="pdf-view" role="link" aria-disabled="true" aria-describedby="pdf-status" target="_blank" rel="noopener noreferrer">View report <span aria-hidden="true">↗</span></a><a class="download-link" id="pdf-download" download="lab02-prelab.pdf" hidden>Download PDF ↓</a><p class="pdf-status" id="pdf-status" role="status">Coming soon.</p></div></article><noscript><p class="muted"><a href="prelab.pdf">Open PDF report</a></p></noscript>
+      <article class="lab-card"><div class="lab-number">02<span>EXPERIMENT</span></div><div class="lab-card-copy"><span class="badge" id="report-badge">PRE-LAB</span><h3>Noise Figure &amp; RF Parameters</h3><p>Noise, distortion, and receiver performance.</p></div><div class="report-download"><a class="button outline" href="lab02/prelab.html" id="pdf-view" role="link" aria-disabled="true" aria-describedby="pdf-status" target="_blank" rel="noopener noreferrer">View report <span aria-hidden="true">↗</span></a><a class="download-link" id="pdf-download" download="lab02-prelab.pdf" hidden>Download PDF ↓</a><p class="pdf-status" id="pdf-status" role="status">Coming soon.</p></div></article><noscript><p class="muted"><a href="lab02/prelab.pdf">Open PDF report</a></p></noscript>
     </section>
 
   </main>
@@ -55,9 +55,9 @@ async function discoverReport() {
   const download = document.getElementById('pdf-download');
   const status = document.getElementById('pdf-status');
   const badge = document.getElementById('report-badge');
-  const url = new URL('prelab.pdf', document.baseURI);
+  const url = new URL('lab02/prelab.pdf', document.baseURI);
   if (window.location.protocol === 'file:') {
-    status.textContent = 'Coming soon.';
+    status.textContent = 'Report files included: lab02/prelab.html and lab02/prelab.pdf';
     return;
   }
   const controller = new AbortController();
@@ -69,7 +69,7 @@ async function discoverReport() {
       status.textContent = 'Report unavailable.';
       return;
     }
-    view.href = url.href;
+    view.href = new URL('lab02/prelab.html', document.baseURI).href;
     view.removeAttribute('aria-disabled');
     view.classList.remove('unavailable');
     download.href = url.href;
