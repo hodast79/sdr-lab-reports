@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reports from our software-defined radio lab.">
+  <title>SDR Lab — Experiment Reports</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css"><script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="SDR Lab home"><span class="brand-icon" aria-hidden="true">∿</span> SDR<span class="brand-light">/</span>LAB</a>
+    <nav aria-label="Main navigation"><a class="active" href="index.html" aria-current="page">Home</a><a href="#notebook">Reports</a><a href="https://github.com/hodast79/sdr-lab-reports" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero"><div class="container hero-grid">
+      <div class="hero-copy"><p class="eyebrow"><span class="tiny-dot"></span> SOFTWARE-DEFINED RADIO LABORATORY</p>
+        <h1>SDR lab<br><em>reports.</em></h1>
+        <p class="hero-description">Reports and results from our radio experiments.</p>
+        <div class="actions"><a class="button primary" href="#notebook">View reports <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="instrument" role="img" aria-label="Illustrative two-tone spectrum, showing fundamental tones, third-order products and a noise floor. Not measured data.">
+        <div class="instrument-top"><span><i></i> TWO-TONE SPECTRUM</span><span>ILLUSTRATION</span></div>
+        <svg viewBox="0 0 560 330" aria-hidden="true">
+          <defs><pattern id="grid" width="50" height="45" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 45" fill="none" stroke="#ffffff" stroke-opacity=".09"/></pattern><linearGradient id="signal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5a872" stop-opacity=".32"/><stop offset="1" stop-color="#f5a872" stop-opacity="0"/></linearGradient></defs>
+          <rect x="38" y="20" width="495" height="260" fill="url(#grid)"/>
+          <path d="M40 256 L55 251 68 258 79 249 91 255 107 252 117 257 130 250 142 255 154 250 165 254 175 247 183 254 192 177 201 253 211 250 224 255 235 248 246 253 256 67 267 252 280 249 292 254 306 250 319 67 330 254 342 250 353 255 366 248 377 253 386 177 395 252 408 248 419 255 430 250 443 255 457 250 471 256 485 249 500 253 530 252 L530 280 L40 280Z" fill="url(#signal)"/>
+          <path d="M40 256 L55 251 68 258 79 249 91 255 107 252 117 257 130 250 142 255 154 250 165 254 175 247 183 254 192 177 201 253 211 250 224 255 235 248 246 253 256 67 267 252 280 249 292 254 306 250 319 67 330 254 342 250 353 255 366 248 377 253 386 177 395 252 408 248 419 255 430 250 443 255 457 250 471 256 485 249 500 253 530 252" fill="none" stroke="#f5a872" stroke-width="2.2" stroke-linejoin="round"/>
+          <g fill="#b7c9cd" font-size="11" font-family="monospace"><text x="244" y="48">f₁</text><text x="309" y="48">f₂</text><text x="162" y="159">2f₁−f₂</text><text x="365" y="159">2f₂−f₁</text><text x="40" y="307">FREQUENCY →</text><text x="40" y="237" fill="#719da7">NOISE FLOOR</text></g>
+        </svg>
+      </div>
+    </div></section>
+    <section class="container notebook" id="notebook"><div class="section-heading"><h2>Lab reports</h2></div>
+      <article class="lab-card"><div class="lab-number">02<span>EXPERIMENT</span></div><div class="lab-card-copy"><span class="badge" id="report-badge">PRE-LAB</span><h3>Noise Figure &amp; RF Parameters</h3><p>Noise, distortion, and receiver performance.</p></div><div class="report-download"><a class="button outline unavailable" id="pdf-view" role="link" aria-disabled="true" aria-describedby="pdf-status" target="_blank" rel="noopener noreferrer">View report <span aria-hidden="true">↗</span></a><a class="download-link" id="pdf-download" download="lab02-prelab.pdf" hidden>Download PDF ↓</a><p class="pdf-status" id="pdf-status" role="status">Coming soon.</p></div></article><noscript><p class="muted"><a href="lab02/prelab.pdf">Open PDF report</a></p></noscript>
+    </section>
+
+  </main>
+  <footer class="container site-footer"><span>SDR / LAB <span class="footer-divider">—</span> Experiment reports</span><a href="https://github.com/hodast79/sdr-lab-reports">GitHub ↗</a></footer>
+</body></html>
